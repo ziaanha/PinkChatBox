@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PinkChat — Your Little Corner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">♡</div>
+        <div>
+          <h1>pinkchat<span>.</span></h1>
+          <p>your little corner</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="avatar my-avatar">Z</div>
+        <div class="profile-info">
+          <strong>Zia</strong>
+          <span><i class="online-dot"></i> Online now</span>
+        </div>
+        <button class="icon-button" id="settings-btn" title="Settings">⚙</button>
+      </div>
+
+      <div class="sidebar-heading">
+        <span>YOUR MESSAGES</span>
+        <button id="new-chat-btn" title="New chat">＋</button>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input id="chat-search" type="text" placeholder="Find a conversation...">
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="unread">Unread</button>
+        <button class="filter" data-filter="online">Online</button>
+      </div>
+
+      <div class="chat-list" id="chat-list"></div>
+
+      <div class="sidebar-footer">
+        <span>made with ♡</span>
+        <span>pinkchat v1.0</span>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <header class="chat-header">
+        <div class="header-person">
+          <div class="avatar header-avatar" id="header-avatar">M</div>
+          <div>
+            <h2 id="header-name">Mia Rose</h2>
+            <p id="header-status"><i class="online-dot"></i> Online</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-button" id="search-message-btn" title="Search messages">⌕</button>
+          <button class="icon-button" id="details-btn" title="Chat details">ⓘ</button>
+        </div>
+      </header>
+
+      <div class="message-search hidden" id="message-search">
+        <input id="message-search-input" placeholder="Search messages in this chat...">
+        <button id="close-message-search">✕</button>
+      </div>
+
+      <section class="messages" id="messages">
+        <div class="welcome-note">
+          <span>♡</span>
+          <p>Every conversation starts with a little hello.</p>
+        </div>
+      </section>
+
+      <div class="typing-indicator hidden" id="typing-indicator">
+        <span></span><span></span><span></span>
+        <small>typing...</small>
+      </div>
+
+      <form class="composer" id="message-form">
+        <button type="button" class="composer-action" id="emoji-btn" title="Add emoji">☺</button>
+        <textarea id="message-input" rows="1" placeholder="Write a little something..." maxlength="1000"></textarea>
+        <button type="button" class="composer-action" id="attach-btn" title="Attach a file">＋</button>
+        <input type="file" id="file-input" hidden>
+        <button type="submit" class="send-button" title="Send message">
+          <span>Send</span><span>➤</span>
+        </button>
+      </form>
+
+      <div class="emoji-picker hidden" id="emoji-picker">
+        <button type="button">💗</button>
+        <button type="button">💕</button>
+        <button type="button">✨</button>
+        <button type="button">🥹</button>
+        <button type="button">😂</button>
+        <button type="button">🌸</button>
+        <button type="button">🫶</button>
+        <button type="button">🎀</button>
+        <button type="button">❤️</button>
+        <button type="button">😭</button>
+        <button type="button">🥰</button>
+        <button type="button">🌷</button>
+      </div>
+
+      <div class="chat-footer">your words, your space <span>♡</span></div>
+    </main>
+
+    <aside class="details-panel hidden" id="details-panel">
+      <button class="icon-button close-details" id="close-details">✕</button>
+      <div class="details-avatar avatar" id="details-avatar">M</div>
+      <h2 id="details-name">Mia Rose</h2>
+      <p id="details-status">Online</p>
+      <div class="details-divider"></div>
+      <p class="details-label">ABOUT THIS CHAT</p>
+      <p class="details-description" id="details-description">
+        A little space for lovely conversations.
+      </p>
+      <p class="details-label">SHARED FILES</p>
+      <div id="shared-files" class="shared-files">No files shared yet.</div>
+      <button class="clear-button" id="clear-chat-btn">Clear conversation</button>
+    </aside>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
